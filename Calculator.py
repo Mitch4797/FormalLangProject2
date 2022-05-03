@@ -143,7 +143,7 @@ def stringInterpreter(inputString):
                             value = 10 * value + ord(currentCharcter) - ord('0')
                         elif currentCharcter == 'e' or currentCharcter == 'E':
                             currentState = STATE.EXPONENTSIGN
-                        elif currentCharcter =='f' or currentCharcter == 'F':
+                        elif currentCharcter =='f' or currentCharcter == 'F' or currentCharcter == 'd'or currentCharcter == 'D':
                             currentState = STATE.DONE
                         #########
                         elif currentCharcter in ENDCHAR:
@@ -204,7 +204,7 @@ def stringInterpreter(inputString):
                             currentState = STATE.DECIMALUNDER
                         elif currentCharcter == 'e' or currentCharcter == 'E':
                             currentState = STATE.EXPONENTSIGN
-                        elif currentCharcter =='f' or currentCharcter == 'F':
+                        elif currentCharcter =='f' or currentCharcter == 'F'or currentCharcter == 'd'or currentCharcter == 'D':
                             currentState = STATE.DONE
                         #########
                         elif currentCharcter in ENDCHAR:
@@ -258,7 +258,7 @@ def stringInterpreter(inputString):
                     case STATE.EXPONENT:
                         if currentCharcter.isdigit():
                             exponent = 10 * exponent + (ord(currentCharcter) - ord('0'))
-                        elif currentCharcter =='f' or currentCharcter == 'F':
+                        elif currentCharcter =='f' or currentCharcter == 'F'or currentCharcter == 'd'or currentCharcter == 'D':
                             currentState = STATE.DONE
                         elif currentCharcter == '_':
                             currentState = STATE.EXPONENTUNDER
